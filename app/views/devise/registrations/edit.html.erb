@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <h3>Edit <%= resource_name.to_s.humanize %></h3>
+      <%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
+        <div class="form-group">
+          <%= f.text_field :firstname, :autofocus => true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :lastname, :autofocus => true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :phonenumber, :autofocus => true, class: 'form-control' %>
+        </div>
+      
+        <%= f.submit 'Update', :class => 'btn btn-primary' %>
+        <%= link_to "Change Password", users_edit_password_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <h3>Cancel Account</h3>
+      <p>Unhappy? We'll be sad to see you go.</p>
+      <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+
+
+

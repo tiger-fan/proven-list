@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My Portfolio" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Portfolio" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "intlTelInput" %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" type="text/css" href="/assets/intlTelInput.css">
+    <script type="text/javascript" src="assets/intlTelInput.js"></script>
+    <script type="text/javascript" src="assets/util.js"></script>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <div style="margin-top:50px;">
+        <%= content_for?(:error_header) ? '' : (render 'layouts/messages') %>
+      </div>       
+       <%= yield %>
+    </main>
+  </body>
+</html>
