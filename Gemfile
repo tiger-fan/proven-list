@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 group :development, :test do
   gem 'byebug'
 end
@@ -32,6 +35,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'dotenv-rails'
 end
 group :test do
